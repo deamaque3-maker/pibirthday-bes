@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday 🎀</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400&family=Dancing+Script:wght@500;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════
+       SECTION 1 — OPENING SCREEN
+  ══════════════════════════════════ -->
+  <section id="opening-screen" class="section-full">
+    <div class="opening-bg-shapes">
+      <span class="bg-heart" style="--s:60px;--t:10%;--l:5%;--d:0s;">♡</span>
+      <span class="bg-heart" style="--s:40px;--t:70%;--l:8%;--d:1.2s;">♡</span>
+      <span class="bg-heart" style="--s:80px;--t:20%;--l:88%;--d:0.6s;">♡</span>
+      <span class="bg-heart" style="--s:35px;--t:80%;--l:92%;--d:2s;">♡</span>
+      <span class="bg-heart" style="--s:50px;--t:50%;--l:50%;--d:1.5s;">♡</span>
+    </div>
+
+    <div class="opening-content">
+      <!-- Envelope illustration -->
+      <div class="envelope-wrapper" id="envelopeWrapper">
+        <div class="envelope" id="envelope">
+
+          <!-- Back of envelope (bottom layer) -->
+          <div class="env-back"></div>
+
+          <!-- Left flap -->
+          <div class="env-side-left"></div>
+          <!-- Right flap -->
+          <div class="env-side-right"></div>
+          <!-- Bottom flap -->
+          <div class="env-bottom"></div>
+
+          <!-- Letter inside -->
+          <div class="env-letter" id="envLetter">
+            <div class="letter-inner">
+              <span class="letter-line"></span>
+              <span class="letter-line short"></span>
+              <span class="letter-heart">♡</span>
+              <span class="letter-line short"></span>
+            </div>
+          </div>
+
+          <!-- Top flap (opens) -->
+          <div class="env-flap" id="envFlap">
+            <div class="env-flap-inner"></div>
+            <!-- Wax seal -->
+            <div class="wax-seal" id="waxSeal">♡</div>
+          </div>
+
+        </div>
+      </div>
+
+      <p class="opening-tagline">malopit toh boss</p>
+
+      <button class="open-btn" id="openBtn" onclick="openEnvelope()">
+        <span class="btn-text">OPEN ME</span>
+        <span class="btn-sparkle">✦</span>
+      </button>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════
+       SECTION 2 — BIRTHDAY GREETING
+  ══════════════════════════════════ -->
+  <section id="greeting-section" class="section-full hidden-section">
+    <div class="greeting-bg-shapes">
+      <div class="confetti-burst" id="confettiBurst"></div>
+    </div>
+
+    <!-- Scattered stickers -->
+    <div class="stickers-layer">
+      <img class="gif-sticker" src="assets/100.gif" style="--t:5%;--l:2%;--rot:-6deg;" />
+      <img class="gif-sticker" src="assets/101001.gif" style="--t:5%;--l:76%;--rot:6deg;" />
+    </div>
+
+    <div class="greeting-content">
+      <p class="greeting-pre"></p>
+      </p>
+      <h1 class="greeting-title">
+        <span class="title-line">Happy</span>
+        <span class="title-line highlight">Birthday,</span>
+        <span class="title-line name-line" id="birthdayName">My Baby</span>
+      </h1>
+      <div class="greeting-divider">
+        <span>✦</span><span>♡</span><span>✦</span>
+      </div>
+      <p class="greeting-sub">
+        hapi na birthday mo pa<br/>hapi na birthday mo pa hapi birthday
+      </p>
+      <div class="proceed-wrap visible" id="greetingProceedWrap" style="margin-top:32px;">
+        <button class="proceed-btn" onclick="revealGallery1()">CONTINUE 💗</button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════
+       SECTION 3 — PHOTO GALLERY
+  ══════════════════════════════════ -->
+  <section id="gallery-section" class="section-padded hidden-section">
+    <div class="section-header">
+      <p class="section-subtitle">ganda ganda mo ♡♡♡</p>
+    </div>
+
+    <!-- Sticky Notes Gallery 1 -->
+    <div class="sticky-notes-layer">
+    </div>
+
+    <div class="polaroid-grid" id="polaroidGrid">
+
+      <!-- Polaroid 1 -->
+      <div class="polaroid" data-index="0">
+        <div class="polaroid-flip">
+          <div class="polaroid-front">
+            <div class="polaroid-inner">
+              <div class="polaroid-img-wrap">
+                <img src="assets/photo1.jpg.jfif" alt="Memory 1" class="polaroid-img" onerror="this.style.display='none'; this.parentElement.classList.add('no-img')" />
+                <div class="polaroid-overlay"></div>
+              </div>
+              <div class="polaroid-caption"><span class="caption-heart">♡</span><p></p></div>
+            </div>
+            <div class="polaroid-tape"></div>
+          </div>
+          <div class="polaroid-back">
+            <div class="back-lines"></div>
+            <p class="back-msg">random lang talaga tong mga nasa likod ng pic, love u bes</p>
+            <span class="back-heart">♡</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Polaroid 2 -->
+      <div class="polaroid" data-index="1">
+        <div class="polaroid-flip">
+          <div class="polaroid-front">
+            <div class="polaroid-inner">
+              <div class="polaroid-img-wrap">
+                <img src="assets/photo2.jpg.jfif" alt="Memory 2" class="polaroid-img" onerror="this.style.display='none'; this.parentElement.classList.add('no-img')" />
+                <div class="polaroid-overlay"></div>
+              </div>
+              <div class="polaroid-caption"><span class="caption-heart">♡</span><p></p></div>
+            </div>
+            <div class="polaroid-tape"></div>
+          </div>
+          <div class="polaroid-back">
+            <div class="back-lines"></div>
+            <p class="back-msg">ang ganda ganda moooooo, pwede pakiss??</p>
+            <span class="back-heart">♡</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Polaroid 3 -->
+      <div class="polaroid" data-index="2">
+        <div class="polaroid-flip">
+          <div class="polaroid-front">
+            <div class="polaroid-inner">
+              <div class="polaroid-img-wrap">
+                <img src="assets/photo3.jpg.jfif" alt="Memory 3" class="polaroid-img" onerror="this.style.display='none'; this.parentElement.classList.add('no-img')" />
+                <div class="polaroid-overlay"></div>
+              </div>
+              <div class="polaroid-caption"><span class="caption-heart">♡</span><p></p></div>
+            </div>
+            <div class="polaroid-tape"></div>
+          </div>
+          <div class="polaroid-back">
+            <div class="back-lines"></div>
+            <p class="back-msg">u know if meron ikaw insecurities sa mukha, gusto kong malaman mo na maganda ikaw. gustong gusto ko yung face mo, ganda ganda tas cute heahhaha</p>
+            <span class="back-heart">♡</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Polaroid 4 -->
+      <div class="polaroid" data-index="3">
+        <div class="polaroid-flip">
+          <div class="polaroid-front">
+            <div class="polaroid-inner">
+              <div class="polaroid-img-wrap">
+                <img src="assets/photo4.jpg.jfif" alt="Memory 4" class="polaroid-img" onerror="this.style.display='none'; this.parentElement.classList.add('no-img')" />
+                <div class="polaroid-overlay"></div>
+              </div>
+              <div class="polaroid-caption"><span class="caption-heart">♡</span><p></p></div>
+            </div>
+            <div class="polaroid-tape"></div>
+          </div>
+          <div class="polaroid-back">
+            <div class="back-lines"></div>
+            <p class="back-msg">tas gustong gusto ko na nakangiti ikaw, kase ewan ko, pero masaya ako pag nakikita ko ikaw naka smile ang corny pero alam mo yung parang nahuhulog ako sayo lalo hwehaheha</p>
+            <span class="back-heart">♡</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Polaroid 5 -->
+      <div class="polaroid" data-index="4">
+        <div class="polaroid-flip">
+          <div class="polaroid-front">
+            <div class="polaroid-inner">
+              <div class="polaroid-img-wrap">
+                <img src="assets/photo5.jpg.jfif" alt="Memory 5" class="polaroid-img" onerror="this.style.display='none'; this.parentElement.classList.add('no-img')" />
+                <div class="polaroid-overlay"></div>
+              </div>
+              <div class="polaroid-caption"><span class="caption-heart">♡</span><p></p></div>
+            </div>
+            <div class="polaroid-tape"></div>
+          </div>
+          <div class="polaroid-back">
+            <div class="back-lines"></div>
+            <p class="back-msg">ANG GANDA GANDA MUUEE, PWEDE KABA PAKASALAN?</p>
+            <span class="back-heart">♡</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /polaroid-grid -->
+
+    <!-- Proceed Button -->
+    <div class="proceed-wrap" id="proceedWrap">
+      <button class="proceed-btn" id="proceedBtn" onclick="revealGallery2()">
+        CONTINUE 💗
+      </button>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════
+       SECTION 3B — SECOND PHOTO GALLERY
+  ══════════════════════════════════ -->
+  <section id="gallery2-section" class="section-padded hidden-section">
+    <div class="section-header">
+      <p class="section-subtitle">moments with you ♡</p>
+    </div>
+
+    <!-- Sticky Notes Gallery 2 -->
+    <div class="sticky-notes-layer">
+    </div>
+
+    <div class="polaroid-grid" id="polaroidGrid2">
+
+      <!-- Polaroid 6 -->
+      <div class="polaroid polaroid2" data-index="0">
+        <div class="polaroid-flip">
+          <div class="polaroid-front">
+            <div class="polaroid-inner">
+              <div class="polaroid-img-wrap">
+                <img src="assets/photo6.jpg.jfif" alt="Memory 6" class="polaroid-img" onerror="this.style.display='none'; this.parentElement.classList.add('no-img')" />
+                <div class="polaroid-overlay"></div>
+              </div>
+              <div class="polaroid-caption"><span class="caption-heart">♡</span><p></p></div>
+            </div>
+            <div class="polaroid-tape"></div>
+          </div>
+          <div class="polaroid-back">
+            <div class="back-lines"></div>
+            <p class="back-msg">dapat picture toh nung 1st time kita mameet kaso wala naman tayong pic non, pero yan nalang, cool naman. nung 1st time kitang makita sa personal, crush na kita hewhehehahah pero love pa rin kita nung mga time nayon, lam mo naman yon since nabasa mo message ko sayo sa ig, kaiyak</p>
+            <span class="back-heart">♡</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Polaroid 7 -->
+      <div class="polaroid polaroid2" data-index="1">
+        <div class="polaroid-flip">
+          <div class="polaroid-front">
+            <div class="polaroid-inner">
+              <div class="polaroid-img-wrap">
+                <img src="assets/photo7.jpg.jfif" alt="Memory 7" class="polaroid-img" onerror="this.style.display='none'; this.parentElement.classList.add('no-img')" />
+                <div class="polaroid-overlay"></div>
+              </div>
+              <div class="polaroid-caption"><span class="caption-heart">♡</span><p></p></div>
+            </div>
+            <div class="polaroid-tape"></div>
+          </div>
+          <div class="polaroid-back">
+            <div class="back-lines"></div>
+            <p class="back-msg">nung 2nd na meet up natin, nahihiya pa rin ako sayo, halata naman hwhahahhaha hawak hawak ba naman yung bulaklak kung di pa mag ccr di pa mabibigay, lala talaga</p>
+            <span class="back-heart">♡</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Polaroid 8 -->
+      <div class="polaroid polaroid2" data-index="2">
+        <div class="polaroid-flip">
+          <div class="polaroid-front">
+            <div class="polaroid-inner">
+              <div class="polaroid-img-wrap">
+                <img src="assets/photo8.jpg.jfif" alt="Memory 8" class="polaroid-img" onerror="this.style.display='none'; this.parentElement.classList.add('no-img')" />
+                <div class="polaroid-overlay"></div>
+              </div>
+              <div class="polaroid-caption"><span class="caption-heart">♡</span><p></p></div>
+            </div>
+            <div class="polaroid-tape"></div>
+          </div>
+          <div class="polaroid-back">
+            <div class="back-lines"></div>
+            <p class="back-msg">gustong gusto ko talaga yung part na nagpapa baby ka tas hinahayaan mo ako sa ginagawa ko for u. love u bes. nung 1st time ko rin ikaw maka cuddle gusto ko rin yon eh, lalambingang lang tayo mag damag pero mukha ka talagang cp bes HHAHAHAHAHHA ayaw mawalay sa cp eh. miss kita nung umuwi ka, sarap habulin yung jeep na sinakyan mo HAHAH EME</p>
+            <span class="back-heart">♡</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Polaroid 9 -->
+      <div class="polaroid polaroid2" data-index="3">
+        <div class="polaroid-flip">
+          <div class="polaroid-front">
+            <div class="polaroid-inner">
+              <div class="polaroid-img-wrap">
+                <img src="assets/photo9.jpg.jfif" alt="Memory 9" class="polaroid-img" onerror="this.style.display='none'; this.parentElement.classList.add('no-img')" />
+                <div class="polaroid-overlay"></div>
+              </div>
+              <div class="polaroid-caption"><span class="caption-heart">♡</span><p></p></div>
+            </div>
+            <div class="polaroid-tape"></div>
+          </div>
+          <div class="polaroid-back">
+            <div class="back-lines"></div>
+            <p class="back-msg">nung 3rd naman sakto nalang hiya ko neto sayo, pero sa kaibigan mo naman ako nahiya, tas malas pa di pako nagsasalita ng maayos yun lang talaga, lumbay yan. sorry sa pagiging pasaway ko sayo tas sa pang aasar ko, nalaman ko na mas pikon ka sa personal HAHHAHAHAHHA</p>
+            <span class="back-heart">♡</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Polaroid 10 -->
+      <div class="polaroid polaroid2" data-index="4">
+        <div class="polaroid-flip">
+          <div class="polaroid-front">
+            <div class="polaroid-inner">
+              <div class="polaroid-img-wrap">
+                <img src="assets/photo10.jpg.jfif" alt="Memory 10" class="polaroid-img" onerror="this.style.display='none'; this.parentElement.classList.add('no-img')" />
+                <div class="polaroid-overlay"></div>
+              </div>
+              <div class="polaroid-caption"><span class="caption-heart">♡</span><p></p></div>
+            </div>
+            <div class="polaroid-tape"></div>
+          </div>
+          <div class="polaroid-back">
+            <div class="back-lines"></div>
+            <p class="back-msg">tas lala sarap non ilang araw ako nasayo hayst, pwede mag paampon?? hehahahahah sorry about sa pinapunta kita dasma pa, ramdam ko na irita mo non, parang may duamanggi lang sayo sasapakin mo na sa sobrang tagal natin nag wait ng masasakyan pa indang hahahahhaha v peace bes, love u. thank u rin sa mga nagastos mo saakin, nakakahiya nga eh, pero pag may pera nako em naman man lilibre sayo lagii love u, thank u sa pag tanggap saakin bae.</p>
+            <span class="back-heart">♡</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /polaroid-grid2 -->
+
+    <!-- Proceed Button 2 -->
+    <div class="proceed-wrap" id="proceedWrap2">
+      <button class="proceed-btn" id="proceedBtn2" onclick="revealNotes()">
+        CONTINUE 💗
+      </button>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════
+       SECTION 4 — HEARTFELT NOTES
+  ══════════════════════════════════ -->
+  <section id="notes-section" class="section-padded hidden-section">
+    <div class="section-header">
+      <h2 class="section-title">sulat para sayo aking iniirog</h2>
+      <p class="section-subtitle">💜💜💜</p>
+    </div>
+
+    <div class="notes-grid">
+
+      <div class="note-card note-card--wide" data-delay="0">
+        <div class="note-icon">💜</div>
+        <h3 class="note-heading">Happy 19th birthday baby ko</h3>
+        <p class="note-text">
+          lala bae, tagal na kitang kilala, mag bebente na rin tayo next year, nox naman talaga oh. mga gurang na hahahhah, pero nakakatuwa lang isipin ang dami nating ganap sa isa't isa pero nandito pa rin tayo. i hope na mag continue lang toh hanggang final, cuz gusto kitang pakasalan, bae. sobrang swerte ko nan talaga pag nangyari yon. pero i will make it happen po. promise pro is mis. pero ayun may line up yung message ko sayo now kase alam mo naman magulo ako gumawa, kaya sisimulan natin sa wish ko for u, thank u, pagiging proud ko sayo, tas random pa rin talaga.<br/><br/>
+          So ang wish ko para sayo ay kung ano man ang wish mo para sarili mo, maliban sa mga negative. I'm always here lang to support u sa kung ano mang gusto mong ganap sa buhay mo. ik na hindi magiging madali ang pagsubok ng life when it comes sa mga gusto or wish natin sa buhay, pero it's okay since masaya rin pag hirapan muna ang mga bagay bagay bago mo makuha or matupad yung gusto mo.<br/><br/>
+          Thank u for always being there for me and for understanding lalo na nung nag kita tayo, ik na ang hirap kong intindihin dahil di ako masyado nag sasalita hahahhaha sorry and thank u sa pag intindi, baebae. u know i really appreciate u, like di ko man madalas sabihin pero sobra ko ikaw na appreciate sa mga bagay na ginagawa mo for me, sa mga bagay na ginagawa mo naman para sa sarili mo, basta sa lahat. thank u rin cuz love moko like bakit moko love HAHAHAH eme swerte ko talaga, papasikat nako neto kase mahal ako nang nag iisang reyna ng garden of eden, hayts taob lahat ng may gusto kay eden HHAHAHAHA jk seryos na nga. thank u rin for being here lang palagi, ik in the past few years ang daming ganap ng buhay mo, pero u always choose na lumaban, thank u for that, baby. and sa lahat thank uuuuu. u know sobrang proud ako sayo kung ano man ikaw ngayon, para akong nanay mo sa sobrang proud ko sayo, since i know u since nung 13 tayo, kaya masasabi kong ang laki ng pinagbago mo, bes. like le is git and masasabi ko din na kung ano mang masasayang ganap sa buhay or achievements mo sa life deserve mo yan, like wais leget hahahahaha. and i hope na maging proud ka din sa sarili mo, kung may mga maliit o malaki kang achievements na nakukuha sa life.<br/><br/>
+          I hope in the future tayo pa rin, pero if ever man na di sumaatin ang bohai nayon. palagi mong tatandaan na proud ako sayo and ako pa rin ang number 1 supporter mo sa lahat, kahit mag selos bago mo, walang papalit saakin sa pagiging 1 HAHAHHAHAHAA lala ko talaga, mag paparis ako nan bae, tas iisipin kita mag damag don, tas magkikita tayo don accidentally tas may asawa kana, tas kabet nako HHAHAHAH jk lang. pero if ever nga i hope makuha mo yung love na want mo, cuz ik u deserve it lala mo rin mag mahal eh, napaka nonchalant ng love language ni bes sa chat, pero kitang kita sa personal, pwede kana ha.<br/><br/>
+          So ayun, happy happy birthday, baby ko. wala man ako dyan sa tabi mo para mag celeb ng birthday mo, pero nandito naman ako sa call kumakaway HHAHAHAHAHH ba is liw. wag moko itakwil pls. ik na may mga magagandang ganap ngayong birthday mo, and i hope ienjoy mo yan, oki doks? oki. miss u na, kung nandyan ako may regalo ka sanang kiss at yakap HAHAHHA palo, pero wala ma ddelay lang bae pero mabibigay naman yan. i love u so so muchh sa aking prinsesa.<br/><br/>
+          tas pahabol ko lang yung website may suprise pa tuh sa baba, tas sana na pindot mo yung mga picture sa taas netong message. angas ko talaga HAHAHAHAH eme love u baeee. happy happy birthday sayo ang inumin sayo ang pulutan happy happy birthday 💜
+        </p>
+      </div>
+
+    </div><!-- /notes-grid -->
+
+    <div class="proceed-wrap visible" style="margin-top:40px;">
+      <button class="proceed-btn" onclick="revealAskingPage()">CONTINUE 💗</button>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════
+       SECTION 6 — ASKING PAGE
+  ══════════════════════════════════ -->
+  <section id="passcode-section" class="section-full hidden-section">
+    <div class="passcode-content">
+      <div class="passcode-lock-icon">🤫</div>
+      <h2 class="passcode-title">wait...</h2>
+      <p class="passcode-hint" id="askQuestion">Gusto mo ba makita ang aking malupitang sikrit?</p>
+
+      <div class="ask-buttons">
+        <button class="ask-yes-btn" onclick="revealSecret()">YES I 💜</button>
+        <button class="ask-no-btn" id="noBtn" onmouseover="runAwayNo()" ontouchstart="runAwayNo()">NO I</button>
+      </div>
+
+      <p class="passcode-error" id="passcodeError"></p>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════
+       SECTION 7 — SECRET MESSAGE
+  ══════════════════════════════════ -->
+  <section id="secret-message-section" class="section-padded hidden-section">
+    <div class="footer-content">
+      <div class="footer-hearts" id="secretMsgHearts"></div>
+
+      <div class="footer-stars">
+        <span>✦</span><span>✦</span><span>✦</span>
+      </div>
+
+      <h2 class="footer-title">
+        bago mo makita, sorry agad mahal kita palagi bossing
+      </h2>
+
+      <div class="footer-divider">♡ ♡ ♡</div>
+
+      <p class="footer-closing">
+        V peace bes, lam mo naman na lab kita cute mo pag nagagalit ka 💜💜💜 tatlo kase i love u
+      </p>
+
+      <p class="footer-sig">— maangas toh, bes 💜</p>
+
+      <div class="proceed-wrap visible" style="margin-top:40px;">
+        <button class="proceed-btn" onclick="revealSecretGallery()">CONTINUE 💗</button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════
+       SECTION 8 — SECRET GALLERY
+  ══════════════════════════════════ -->
+  <section id="secret-gallery-section" class="section-padded hidden-section">
+    <div class="section-header">
+      <h2 class="section-title">sikrit</h2>
+      <p class="section-subtitle">noxx naman 💜</p>
+    </div>
+
+    <div class="polaroid-grid" id="polaroidGridSecret">
+
+      <!-- Secret Polaroid 1 -->
+      <div class="polaroid polaroid-secret" data-index="0">
+        <div class="polaroid-inner">
+          <div class="polaroid-img-wrap">
+            <img src="assets/photo11.jpg.jpg" alt="Secret 1" class="polaroid-img" onerror="this.style.display='none'; this.parentElement.classList.add('no-img')" />
+            <div class="polaroid-overlay"></div>
+          </div>
+          <div class="polaroid-caption">
+            <span class="caption-heart">♡</span>
+            <p>eyy cute mo dyan</p>
+          </div>
+        </div>
+        <div class="polaroid-tape"></div>
+      </div>
+
+      <!-- Secret Polaroid 2 -->
+      <div class="polaroid polaroid-secret" data-index="1">
+        <div class="polaroid-inner">
+          <div class="polaroid-img-wrap">
+            <img src="assets/photo12.jpg.png" alt="Secret 2" class="polaroid-img" onerror="this.style.display='none'; this.parentElement.classList.add('no-img')" />
+            <div class="polaroid-overlay"></div>
+          </div>
+          <div class="polaroid-caption">
+            <span class="caption-heart">♡</span>
+            <p>v peace bes, slay ka dyan</p>
+          </div>
+        </div>
+        <div class="polaroid-tape"></div>
+      </div>
+
+      <!-- Secret Polaroid 3 -->
+      <div class="polaroid polaroid-secret" data-index="2">
+        <div class="polaroid-inner">
+          <div class="polaroid-img-wrap">
+            <img src="assets/photo13.jpg.png" alt="Secret 3" class="polaroid-img" onerror="this.style.display='none'; this.parentElement.classList.add('no-img')" />
+            <div class="polaroid-overlay"></div>
+          </div>
+          <div class="polaroid-caption">
+            <span class="caption-heart">♡</span>
+            <p>oppa, cute cute mo naman</p>
+          </div>
+        </div>
+        <div class="polaroid-tape"></div>
+      </div>
+
+      <!-- Secret Polaroid 4 -->
+      <div class="polaroid polaroid-secret" data-index="3">
+        <div class="polaroid-inner">
+          <div class="polaroid-img-wrap">
+            <img src="assets/photo14.jpg.png" alt="Secret 4" class="polaroid-img" onerror="this.style.display='none'; this.parentElement.classList.add('no-img')" />
+            <div class="polaroid-overlay"></div>
+          </div>
+          <div class="polaroid-caption">
+            <span class="caption-heart">♡</span>
+            <p>kinikilig ako, wag moko kindatan pls</p>
+          </div>
+        </div>
+        <div class="polaroid-tape"></div>
+      </div>
+
+    </div><!-- /polaroidGridSecret -->
+
+    <div class="proceed-wrap visible" style="margin-top:40px;">
+      <button class="proceed-btn" onclick="revealFinalFooter()">CONTINUE 💗</button>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════
+       SECTION 8 — FINAL FOOTER / CLOSING
+  ══════════════════════════════════ -->
+  <section id="footer-section" class="section-padded hidden-section">
+    <div class="footer-content">
+      <div class="footer-hearts" id="floatingHeartsContainer"></div>
+
+      <div class="footer-stars">
+        <span>✦</span><span>✦</span><span>✦</span>
+      </div>
+
+      <h2 class="footer-title">
+        HAPPY BIRTHDAYY<br/>ULET BABYY KOO!!
+      </h2>
+
+      <div class="footer-divider">♡ ♡ ♡</div>
+
+      <p class="footer-closing">
+        I hope u like what i did hehawhwhha again happy birthday, baby ko. enjoy your day and palagi mong tatandaan na mahal kita 🎀
+      </p>
+
+      <p class="footer-sig">— Ang aking kasipagan para dito ay para lang sayo 💜</p>
+
+      <div class="footer-bottom-hearts">
+        <span>💜</span><span>🤍</span><span>💜</span><span>🤍</span><span>💜</span>
+      </div>
+
+      <div class="proceed-wrap visible" style="margin-top:40px;">
+        <button class="proceed-btn" onclick="revealScrapbook()">CONTINUE 💗</button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════
+       SECTION 9 — SCRAPBOOK FINAL PAGE
+  ══════════════════════════════════ -->
+  <section id="scrapbook-section" class="hidden-section">
+    <img src="assets/12.gif" alt="Final surprise" class="fullpage-gif" />
+  </section>
+
+
+  <!-- Floating Hearts Overlay (triggered on notes reveal) -->
+  <div id="heartsOverlay" class="hearts-overlay"></div>
+
+  <!-- Floating Back Button -->
+  <div class="back-btn" id="backBtn" onclick="goBack()" style="display:none;">← back</div>
+
+  <!-- Background Music -->
+  <audio id="bgMusic" loop>
+    <source src="assets/The 1975 - About You (Official).mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- Floating Music Button -->
+  <div class="music-btn" id="musicBtn" onclick="toggleMusic()">
+    <span class="music-icon" id="musicIcon">♪</span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
